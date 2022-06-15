@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce-__replace_me__-integration",
+  "name": "@vue-storefront/algolia",
   "private": true,
   "license": "MIT",
   "engines": {
