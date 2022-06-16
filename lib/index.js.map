@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "sources": [],
-  "sourcesContent": [],
-  "mappings": "",
+  "sources": ["../src/index.ts"],
+  "sourcesContent": ["export * from './types'"],
+  "mappings": "kWAAA",
   "names": []
 }

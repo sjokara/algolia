@@ -13,8 +13,8 @@
   "scripts": {
     "build": "yarn build:clear && yarn build:package && yarn build:server && yarn build:types",
     "build:clear": "rimraf lib",
-    "build:package": "node ../../scripts/build --file=src/index.ts",
-    "build:server": "node ../../scripts/build --file=src/index.server.ts",
+    "build:package": "node ./scripts/build --file=src/index.ts",
+    "build:server": "node ./scripts/build --file=src/index.server.ts",
     "build:types": "tsc --emitDeclarationOnly",
     "dev": "concurrently \"yarn build:package --watch\" \"yarn build:server --watch\"",
     "precommit": "lint-staged",
@@ -26,9 +26,13 @@
   "dependencies": {
     "@vue-storefront/core": "~2.5.4",
     "algoliasearch": "^4.13.1",
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "esbuild": "^0.14.44",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.3"
   },
   "devDependencies": {
+    "@types/node": "^18.0.0",
     "concurrently": "^7.0.0"
   },
   "files": [
