@@ -22,7 +22,7 @@
     "test": "jest",
     "update:check": "ncu",
     "update:update": "ncu -u",
-    "prepare": "yarn build"
+    "prepare": "yarn && yarn build"
   },
   "dependencies": {
     "@vue-storefront/core": "~2.5.4",
