@@ -25,7 +25,8 @@
     "prepare": "yarn build"
   },
   "dependencies": {
-    "@vue-storefront/core": "~2.5.4",
+    "@vue-storefront/core": "~2.5.13",
+    "@nuxtjs/composition-api": "^0.31.0",
     "algoliasearch": "^4.13.1",
     "axios": "^0.27.2",
     "esbuild": "^0.14.44",
