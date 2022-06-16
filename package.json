@@ -21,7 +21,8 @@
     "prepublish": "yarn build",
     "test": "jest",
     "update:check": "ncu",
-    "update:update": "ncu -u"
+    "update:update": "ncu -u",
+    "prepare": "build"
   },
   "dependencies": {
     "@vue-storefront/core": "~2.5.4",
