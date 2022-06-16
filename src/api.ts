@@ -46,8 +46,31 @@ const searchMultiple = async (context: object, params: string): Promise<any> => 
   }
 };
 
+const getProductsByCategory = async (context: object, params: any): Promise<any> => {
+  try {
+    const response = await products.search('', {filters: `categoryIds: ${params.categoryId}`, hitsPerPage: params.hitsPerPage});
+    return response;
+  } catch (error) {
+    return [];
+  }
+};
+
+const getRelatedProducts = async (context: object, params: any): Promise<any> => {
+  try {
+    const response = await client.getRelatedProducts({
+      indexName: 'magento2_devdefault_products',
+      objectID: params.objectID
+    })
+    return response;
+  } catch (error) {
+    return [];
+  }
+};
+
 export default {
   searchProducts,
   searchCategories,
-  searchMultiple
+  searchMultiple,
+  getProductsByCategory,
+  getRelatedProducts
 };
