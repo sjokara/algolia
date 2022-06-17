@@ -2,36 +2,27 @@
 <img src="https://blog.vuestorefront.io/wp-content/uploads/2020/01/1QU9F6hQlFyHsJIbsdmt6FA.png" height="80px"/>  
 </div>
 
-## Vue Storefront 2 integration with algolia
+# Vue Storefront 2 Algolia Integration
 
 ------
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+## Workflows
 
-## How to start if you want to try out the integration
 
-```
-yarn global add @vue-storefront/cli
-```
-```
-vsf init <project_name> && cd <project_name> && yarn && yarn dev
-```
+### 1. Symlink 
+- Inside of you integration run `yarn build` to build your integration. 
+- After that run `yarn link` to create local package.
+- When the local package is created, position inside of vsf2 project and run `yarn link @vue-storefront/algolia-api`, so it can be registered as node module.
+- Configure your integration in vsf2 (nuxt.config && middleware.config).
+
+### 2. Github Dependecy
+- Add in integration package.json `"scripts": { "prepare": "yarn build" }`, so integration gets built as dependency 
+- In package.json of vsf2 project add `"dependencies": { "GitRepo": "git+https://<token-from-github>:x-oauth-basic@github.com/<user>/<GitRepo>.git" }`
+- After running `yarn` in vsf2, integration should be registered as node module.
+- Configure your integration in vsf2 (nuxt.config && middleware.config).
 
 ## Resources
 
 - [Vue Storefront Documentation](https://docs.vuestorefront.io/v2/)
-- [algolia integration Documentation](https://docs.vuestorefront.io/algolia)
+- [Algolia integration Documentation](https://docs.vuestorefront.io/algolia)
 - [Community Chat](https://discord.vuestorefront.io)
-
-## Support
-
-If you have any questions about this integration we will be happy to answer them on `algolia` channel on [our Discord](discord.vuestorefront.io).
-
-## Contributors ✨
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
